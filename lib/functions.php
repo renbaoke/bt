@@ -1,4 +1,8 @@
 ﻿<?php
+// 删除文件路径中的不安全字符
+function path_escape($path) {
+	return str_replace ( "../", "", $path );
+}
 // 转义html中的特殊字符
 function html_escape($html) {
 	return htmlspecialchars ( $html, ENT_HTML5 );
@@ -31,5 +35,5 @@ function fatal_error($message) {
 function autoload($class) {
 	global $root;
 	global $config;
-	require_once $root . $config['class_dir'] . strtolower ( $class ) . '.class.php';
+	require_once $root . $config ['class_dir'] . strtolower ( $class ) . '.class.php';
 }
