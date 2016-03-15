@@ -10,7 +10,6 @@ class File {
 				$files [$key] ["name"] = $scan;
 				$files [$key] ["ctime"] = filectime ( $path . $scan );
 				$files [$key] ["size"] = filesize ( $path . $scan );
-				$files [$key] ["is_dir"] = is_dir ( $path . $scan );
 			}
 		return $files;
 	}

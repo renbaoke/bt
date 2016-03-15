@@ -1,7 +1,7 @@
 ﻿<?php
 // 删除文件路径中的不安全字符
 function path_escape($path) {
-	return str_replace ( "../", "", $path );
+	return str_replace ( "..", "", str_replace ( "../", "", $path ) );
 }
 // 转义html中的特殊字符
 function html_escape($html) {
