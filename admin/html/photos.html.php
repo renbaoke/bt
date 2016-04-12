@@ -11,6 +11,10 @@
 		<li><?php echo $album_id == $album["id"] ? $album["name"] : "<a href=photos.php?album=" . $album["id"] . ">" . $album["name"] . "</a>" ?></li>
 <?php }?>
 	</ul>
+	<form action="control/album.control.php?operation=add" method="post">
+		<input type="text" name="name" />
+		<input type="submit" value="添加" />
+	</form>
 </div>
 <div id="photos">
 <p>照片总数：<?php echo $photo_count ?>,<a href="upload_photo.php?album=<?php echo $album_id?>">上传图片</a></p>
@@ -18,7 +22,7 @@
 	<div id="photo">
 	<p>ID：<?php echo $photo["id"]?><br />
 	简介：<?php echo $photo["intro"]?><br />
-	<a href="photo.control.php?operation=delete&id=<?php echo $photo["id"]?>">删除</a>
+	<a href="control/photo.control.php?operation=delete&id=<?php echo $photo["id"]?>">删除</a>
 	</p>
 	<img src="<?php echo $root . $config ["upload_dir"] . "image/" . $photo["file"]?>"  alt = "<?php echo $photo["file"]?>" />
 	</div>

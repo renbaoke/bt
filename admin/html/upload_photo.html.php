@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>上传照片</title>
 </head>
-<form action="photo.control.php?operation=add" method="post" enctype="multipart/form-data">
+<form action="control/photo.control.php?operation=add" method="post" enctype="multipart/form-data">
 <?php foreach ($albums as $album){?>
 	<input type="radio" name="album" value="<?php echo $album["id"]?>" <?php if ($album["id"] == $album_id) echo "checked=\"checked\""?> /><?php echo $album["name"]?>
 	

@@ -1,8 +1,8 @@
 ﻿<?php
 class Hyperlink {
 	private $db;
-	public function __construct() {
-		$this->db = new DB ();
+	public function __construct($db) {
+		$this->db = $db;
 	}
 	public function __destruct() {
 		//

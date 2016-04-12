@@ -2,7 +2,7 @@
 require 'prepare.php';
 
 if (! is_logged_in ())
-	not_logged_in ();
+	header ( "Location: login.php" );
 
 $File = new File ();
 

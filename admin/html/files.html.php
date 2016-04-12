@@ -6,7 +6,7 @@
 </head>
 <?php require 'html/header.html.php';?>
 <div>
-	<form action="file.control.php?operation=upload" method="post" enctype="multipart/form-data">
+	<form action="control/file.control.php?operation=upload" method="post" enctype="multipart/form-data">
 		<input type="file" name="file" />
 		<input type="submit" value="Upload" />
 	</form>
