@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class File {
 	public function index($path) {
 		$scans = scandir ( $path );

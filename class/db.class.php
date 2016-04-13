@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class DB {
 	private $connection;
 	public function __construct() {

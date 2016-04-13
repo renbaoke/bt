@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class Hyperlink {
 	private $db;
 	public function __construct($db) {

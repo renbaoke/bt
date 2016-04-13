@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require 'prepare.php';
 
 if (! is_logged_in ())

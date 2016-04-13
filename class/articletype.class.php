@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class ArticleType {
 	private $db;
 	public function __construct($db) {
