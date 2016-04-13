@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.delete_file {
+	font-size:12px;
+	color:black;
+	text-decoration:none;
+	cursor:default;
+	padding:2px 7px;
+	border:1px solid #666;
+	border-radius:1px;
+	background-color:buttonface;
+}
+
+#files table {
+	width:80%;
+	margin-left:10%;
+}
+
+#files > table th:nth-child(2) {
+	width:460px;
+}
+
+#files form {
+	margin-left:10%;
+}

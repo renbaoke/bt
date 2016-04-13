@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+body {
+	width:960px;
+	margin:auto;
+}
+
+#types, #albums {
+	float:left;
+	width:25%;
+	clear:both;
+}
+
+#articles, #photos {
+	margin-left:30%;
+	clear:right;
+}
+
+#files, #hyperlinks, #change_password {
+	clear:both;
+	width:100%;
+}

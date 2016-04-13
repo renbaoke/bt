@@ -1,5 +1,48 @@
 @CHARSET "UTF-8";
 
-#types {
-	
+.edit_article_type, .delete_article_type, .edit_article, .delete_article {
+	font-size:12px;
+	color:black;
+	text-decoration:none;
+	cursor:default;
+	padding:2px 7px;
+	border:1px solid #666;
+	border-radius:1px;
+	background-color:buttonface;
+}
+
+#types li {
+	margin-bottom:1em;
+}
+
+#types a:first-child {
+	margin-right:1em;
+	vertical-align:bottom;
+}
+
+#types > form > input:first-child {
+	width:120px;
+}
+
+#articles > table {
+	width:100%;
+}
+
+#articles > p:last-child {
+	text-align:center;
+}
+
+#articles > p:last-child > span {
+	margin:0 1em;
+}
+
+#articles > table th:nth-child(2) {
+	width:240px;
+}
+
+#articles > table td:nth-child(2) {
+	max-width:240px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }

@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+.edit_hyperlink, .delete_hyperlink {
+	font-size:12px;
+	color:black;
+	text-decoration:none;
+	cursor:default;
+	padding:2px 7px;
+	border:1px solid #666;
+	border-radius:1px;
+	background-color:buttonface;
+}
+
+#hyperlinks table {
+	width:80%;
+	margin-left:10%;
+}
+
+#hyperlinks > table th:first-child {
+	width:20px;
+}
+
+#hyperlinks > table th:nth-child(2) {
+	width:240px;
+}
+
+#hyperlinks > table th:last-child {
+	width:80px;
+}
+
+#hyperlinks form {
+	margin-left:10%;
+	padding-left:10px;
+}
+
+#hyperlinks form input:first-child {
+	width:180px;
+}
+
+#hyperlinks form input:nth-child(2) {
+	width:300px;
+}

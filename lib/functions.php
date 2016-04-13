@@ -21,15 +21,27 @@ function sql_escape($value, $wrap = "'") {
 }
 // 操作成功提示
 function operation_success($message) {
-	echo $message;
+	echo json_encode ( array (
+			"success" => true,
+			"message" => $message 
+	) );
+	die ();
 }
 // 操作失败提示
 function operation_fail($message) {
-	echo $message;
+	echo json_encode ( array (
+			"success" => false,
+			"message" => $message 
+	) );
+	die ();
 }
 // 致命错误
 function fatal_error($message) {
-	die ( $message );
+	echo json_encode ( array (
+			"success" => false,
+			"message" => $message 
+	) );
+	die ();
 }
 // 自动加载类文件
 function autoload($class) {

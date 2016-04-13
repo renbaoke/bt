@@ -16,7 +16,7 @@ foreach ( $files as $key => $file ) {
 	if (isset ( $config ["file_sys_encode"] ))
 		$files [$key] ["name"] = iconv ( $config ["file_sys_encode"], "utf-8", $file ["name"] );
 	
-	$files [$key] ["ctime"] = date ( "Y/m/s", $file ["ctime"] );
+	$files [$key] ["ctime"] = date ( "Y/m/s H:i:s", $file ["ctime"] );
 	
 	if ($file ["size"] > 1024 * 1024 * 1024)
 		$files [$key] ["size"] = ceil ( $file ["size"] / 1024 / 1024 / 1024 ) . "GB";

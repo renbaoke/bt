@@ -2,7 +2,7 @@
 require 'prepare.php';
 
 if (! is_logged_in ())
-	fatal_error ( "not logged in" );
+	fatal_error ( "未登录" );
 
 $File = new File ();
 
@@ -27,6 +27,6 @@ if (isset ( $_GET ["operation"] )) {
 				operation_fail ( "删除文件失败" );
 			break;
 		default :
-			fatal_error ( "unkown operation" );
+			fatal_error ( "未知操作" );
 	}
 }

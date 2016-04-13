@@ -2,17 +2,17 @@
 require 'prepare.php';
 
 if (! is_logged_in ())
-	fatal_error ( "not logged in" );
+	fatal_error ( "未登录" );
 
 $DB = new DB ();
 if (! $DB->connect ( $config ["db"] ["server"], $config ["db"] ["username"], $config ["db"] ["password"], $config ["db"] ["database"] ))
-	fatal_error ( "db connect error" );
+	fatal_error ( "数据库连接错误" );
 
 $Photo = new Photo ( $DB );
 
 if (isset ( $_GET ["operation"] ))
 	switch ($_GET ["operation"]) {
-		case "add" : // 添加
+		case "add" :
 			if (! is_uploaded_file ( $_FILES ["photo"] ["tmp_name"] ))
 				fatal_error ( "文件上传错误" );
 			if (empty ( $_POST ["intro"] ))
@@ -44,7 +44,7 @@ if (isset ( $_GET ["operation"] ))
 			else
 				operation_fail ( "上传照片失败" );
 			break;
-		case "delete" : // 删除
+		case "delete" :
 			if (! isset ( $_GET ["id"] ))
 				fatal_error ( "参数错误" );
 			
@@ -54,12 +54,12 @@ if (isset ( $_GET ["operation"] ))
 			else
 				operation_fail ( "删除失败" );
 			break;
-		case "update" : // 更新
+		case "update" :
 			if ($Photo->update ( $_POST ["id"], $_POST ["intro"] ))
 				operation_success ( "更新成功" );
 			else
 				operation_fail ( "更新失败" );
 			break;
 		default :
-			fatal_error ( "unkown operation" );
+			fatal_error ( "未知操作" );
 	}

@@ -1,8 +1,11 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title><?php echo $is_edit ? "编辑" : "添加" ?>文章</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<title><?php echo $is_edit ? "编辑" : "添加" ?>文章</title>
 </head>
 <form action="control/article.control.php?operation=<?php echo $is_edit ? "update" : "add" ?>" method="post">
 	<input type="hidden" name="id" value="<?php if ($is_edit) echo $article["id"]?>" />
