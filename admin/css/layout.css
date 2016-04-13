@@ -5,13 +5,13 @@ body {
 	margin:auto;
 }
 
-#types, #albums {
+#types, #albums, #article_type {
 	float:left;
 	width:25%;
 	clear:both;
 }
 
-#articles, #photos {
+#articles, #photos, #edit_article {
 	margin-left:30%;
 	clear:right;
 }

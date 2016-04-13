@@ -33,7 +33,7 @@
 }
 
 #articles > p:last-child > span {
-	margin:0 1em;
+	margin:0em 1em;
 }
 
 #articles > table th:nth-child(2) {

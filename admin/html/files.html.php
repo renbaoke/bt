@@ -8,6 +8,7 @@
 	<meta charset="utf-8">
 	<title>管理文件</title>
 </head>
+<body>
 <?php require 'html/header.html.php';?>
 <div id="files">
 	<form action="control/file.control.php?operation=upload" method="post" enctype="multipart/form-data">
@@ -34,4 +35,5 @@
 	</table>
 </div>
 <?php require 'html/footer.html.php';?>
+</body>
 </html>

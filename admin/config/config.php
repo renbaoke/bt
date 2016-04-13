@@ -1,5 +1,5 @@
 <?php
 return array (
 		"article_page_size" => 10,
-		"photo_page_size" => 2
+		"photo_page_size" => 10
 );

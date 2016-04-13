@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/change_password.css">
 	<title>修改密码</title>
 </head>
+<body>
 <?php require 'html/header.html.php';?>
 <div id="change_password">
 	<form action="control/change_password.control.php" method="post">
@@ -18,4 +19,5 @@
 		<div id="submit"><input type="submit" value="修改密码"></div>
 	</form>
 </div>
+</body>
 </html>

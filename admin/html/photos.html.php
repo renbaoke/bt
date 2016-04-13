@@ -8,6 +8,7 @@
 	<meta charset="utf-8">
 	<title>管理照片</title>
 </head>
+<body>
 <?php require 'html/header.html.php';?>
 <div id="albums">
 	<ul>
@@ -24,18 +25,13 @@
 <p>照片总数：<?php echo $photo_count ?>,<a href="upload_photo.php?album=<?php echo $album_id?>">上传图片</a></p>
 <?php foreach ($photos as $photo){?>
 	<div class="photo">
-	<p>ID：<?php echo $photo["id"]?><br />
-	简介：<?php echo $photo["intro"]?><br />
-	<a href="control/photo.control.php?operation=delete&id=<?php echo $photo["id"]?>">删除</a>
-	</p>
 	<img src="<?php echo $root . $config ["upload_dir"] . "image/" . $photo["file"]?>"  alt = "<?php echo $photo["file"]?>" />
+	<p id="intro"><?php echo $photo["intro"]?></p>
+	<span><a class="edit_photo" href="control/photo.control.php?operation=update">编辑</a><a class="delete_photo" href="control/photo.control.php?operation=delete&id=<?php echo $photo["id"]?>">删除</a></span>
 	</div>
 <?php }?>
-<p>
-<?php echo $page > 1 ? "<a href=photos.php?album=".$album_id."&page=".($page-1).">上一页</a>" : "上一页" ?>
-<?php echo $page . "/" . $page_count?>
-<?php echo $page < $page_count ? "<a href=photos.php?album=".$album_id."&page=".($page+1).">下一页</a>" : "下一页" ?>
-</p>
+<p><?php echo $page > 1 ? "<a href=photos.php?album=".$album_id."&page=".($page-1).">上一页</a>" : "上一页" ?><span><?php echo $page . "/" . $page_count?></span><?php echo $page < $page_count ? "<a href=photos.php?album=".$album_id."&page=".($page+1).">下一页</a>" : "下一页" ?></p>
 </div>
 <?php require 'html/footer.html.php';?>
+</body>
 </html>

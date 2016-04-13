@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/hyperlinks.css">
 	<title>管理超链接</title>
 </head>
+<body>
 <?php require 'html/header.html.php';?>
 <div id="hyperlinks">
 	<form action="control/hyperlink.control.php?operation=add" method="post" enctype="multipart/form-data">
@@ -34,4 +35,5 @@
 	</table>
 </div>
 <?php require 'html/footer.html.php';?>
+</body>
 </html>
