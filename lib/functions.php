@@ -37,11 +37,7 @@ function operation_fail($message) {
 }
 // 致命错误
 function fatal_error($message) {
-	echo urldecode ( json_encode ( array (
-			"success" => false,
-			"message" => urlencode ( $message ) 
-	) ) );
-	die ();
+	die ( $message );
 }
 // 自动加载类文件
 function autoload($class) {

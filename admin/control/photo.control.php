@@ -6,7 +6,7 @@ if (! is_logged_in ())
 
 $DB = new DB ();
 if (! $DB->connect ( $config ["db"] ["server"], $config ["db"] ["username"], $config ["db"] ["password"], $config ["db"] ["database"] ))
-	fatal_error ( "数据库连接错误" );
+	operation_fail ( "数据库连接错误" );
 
 $Photo = new Photo ( $DB );
 
@@ -15,8 +15,10 @@ if (isset ( $_GET ["operation"] ))
 		case "add" :
 			if (! is_uploaded_file ( $_FILES ["photo"] ["tmp_name"] ))
 				fatal_error ( "文件上传错误" );
+			if (! isset ( $_POST ["album"] ))
+				operation_fail ( "未选择相册" );
 			if (empty ( $_POST ["intro"] ))
-				fatal_error ( "未填写简介" );
+				operation_fail ( "未填写简介" );
 			
 			$is_image = false;
 			switch ($_FILES ["photo"] ["type"]) {

@@ -1,4 +1,5 @@
 <header>
+	<img src="img/admin.png" alt="img/admin.png">
 	<nav>
 		<a href="index.php">主页</a>
 		<a href="articles.php">文章</a>

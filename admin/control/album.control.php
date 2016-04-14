@@ -6,7 +6,7 @@ if (! is_logged_in ())
 
 $DB = new DB ();
 if (! $DB->connect ( $config ["db"] ["server"], $config ["db"] ["username"], $config ["db"] ["password"], $config ["db"] ["database"] ))
-	fatal_error ( "数据库连接错误" );
+	operation_fail ( "数据库连接错误" );
 
 $Album = new Album ( $DB );
 

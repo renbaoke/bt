@@ -1,34 +1,15 @@
 @CHARSET "UTF-8";
 
-.edit_album, .delete_album, .edit_photo, .delete_photo {
-	font-size:12px;
-	color:black;
-	text-decoration:none;
-	cursor:default;
-	padding:2px 7px;
-	border:1px solid #666;
-	border-radius:1px;
-	background-color:buttonface;
-}
-
 #albums li {
 	margin-bottom:1em;
-}
-
-#albums a:first-child {
-	margin-right:1em;
-	vertical-align:bottom;
-}
-
-#albums > form > input:first-child {
-	width:120px;
 }
 
 .photo {
 	position:relative;
 	float:left;
 	height:300px;
-	margin-right:1em;
+	margin-left:.5em;
+	margin-right:。5em;
 }
 
 .photo img {
@@ -53,6 +34,7 @@
 
 #photos p:last-child {
 	clear:both;
+	text-align:center;
 }
 
 #photos p:last-child span {

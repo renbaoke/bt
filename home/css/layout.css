@@ -5,7 +5,7 @@ body {
 	margin:auto;
 }
 
-#types, #albums_upload_photo, #article_type {
+#types, #albums_upload_photo, #albums, #article_type {
 	float:left;
 	width:25%;
 	clear:both;
