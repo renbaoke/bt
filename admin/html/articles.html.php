@@ -17,6 +17,14 @@
 	<ul>
 <?php if ($article_types !== false) foreach ($article_types as $article_type) {?>
 		<li><span><?php echo $type == $article_type["id"] ? $article_type["name"] : "<a href=articles.php?type=" . $article_type["id"] . ">" . $article_type["name"] . "</a>" ?></span><a class="edit_article_type" href="control/article_type.control.php?operation=update">编辑</a><a class="delete_article_type" href="control/article_type.control.php?operation=delete&id=<?php echo $article_type["id"]?>">删除</a></li>
+		<li>
+			<form action="control/article_type.control.php?operation=update" method="post">
+				<input type="hidden" name="id" value="<?php echo $article_type["id"]?>">
+				<input type="text" name="name" value="<?php echo $article_type["name"]?>">
+				<input type="submit" value="确定">
+				<input type="button" value="取消">
+			</form>
+		</li>
 <?php }?>
 	</ul>
 	<form action="control/article_type.control.php?operation=add" method="post">

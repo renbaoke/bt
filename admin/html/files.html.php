@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/files.css">
+	<script type="text/javascript" src="js/function.js"></script>
+	<script type="text/javascript" src="js/files.js"></script>
 	<title>管理文件</title>
 </head>
 <body>

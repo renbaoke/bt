@@ -24,6 +24,8 @@ if (isset ( $_GET ["operation"] ))
 			operation_success ( "删除成功" );
 			break;
 		case "update" :
+			if (empty($_POST ["id"]) || empty($_POST ["name"]))
+				operation_fail ( "更新失败" );
 			if (! $ArticleType->update ( $_POST ["id"], $_POST ["name"] ))
 				operation_fail ( "更新失败" );
 			

@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/hyperlinks.css">
+	<script type="text/javascript" src="js/function.js"></script>
+	<script type="text/javascript" src="js/hyperlinks.js"></script>
 	<title>管理超链接</title>
 </head>
 <body>
