@@ -16,21 +16,18 @@ if ($my_url === $from_url) {
 	$db_password = sql_escape ( $_POST ["db_password"], "" );
 	
 	if (! $DB->connect ( $db_host, $db_username, $db_password, $db_database )) {
-		echo "数据库连接错误！";
+		die ( "数据库连接错误！" );
 	} else {
 		set_db_config ( "config/db.php", $db_host, $db_database, $db_username, $db_password );
 		
 		$sql_file = fopen ( "tables.sql", "r" );
-		$sqls = explode(';', fread ( $sql_file, filesize ( "tables.sql" ) ));
-		fclose($sql_file);
+		$sqls = explode ( "\n\n", fread ( $sql_file, filesize ( "tables.sql" ) ) );
+		fclose ( $sql_file );
 		
-		foreach ($sqls as $sql) {
-			if (!$DB->put($sql)) {
-				echo "创建数据表失败";
-				break;
-			}
-		}
-
+		foreach ( $sqls as $sql )
+			if (! $DB->put ( $sql ))
+				die ( "创建数据表失败！" );
+		
 		header ( "Location: admin/" );
 	}
 }
