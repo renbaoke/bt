@@ -38,10 +38,6 @@
 
 #articles > table {
 	width:100%;
-}
-
-#articles > table tr:nth-child(odd):not(:first-child) {
-	display:none;
 } 
 
 #articles > p:last-child {

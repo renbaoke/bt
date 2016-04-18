@@ -33,6 +33,14 @@
 			<td><?php echo $hyperlink["http"]?></td>
 			<td><a class="edit_hyperlink" href="control/hyperlink.control.php?operation=update">编辑</a><a class="delete_hyperlink" href="control/hyperlink.control.php?operation=delete&id=<?php echo $hyperlink["id"]?>">删除</a></td>
 		</tr>
+		<tr>
+		<form action="control/hyperlink.control.php?operation=update" method="post">
+			<td><input type="hidden" name="id" value="<?php echo $hyperlink["id"]?>"><?php echo $hyperlink["id"]?></td>
+			<td><input type="text" name="title" value="<?php echo $hyperlink["title"] ?>"></td>
+			<td><input type="text" name="http" value="<?php echo $hyperlink["http"]?>"></td>
+			<td><input type="submit" value="确定"><input type="button" value="取消"></td>
+		</form>
+		</tr>
 <?php }?>
 	</table>
 </div>

@@ -1,4 +1,4 @@
-function confirmDelete(selector, targetClass) {
+function confirmDelete(selector, targetClass, success, fail) {
 	document.querySelector(selector).addEventListener("click", function(e) {
 		if (e.target.className == targetClass) {
 			var url = e.target.getAttribute("href");
@@ -8,9 +8,9 @@ function confirmDelete(selector, targetClass) {
 					if (xhr.readyState == 4 && xhr.status == 200) {
 						JSON.parse(xhr.responseText);
 						if (JSON.parse(xhr.responseText).success) {
-							location.reload();
+							success(JSON.parse(xhr.responseText).message);
 						} else {
-							alert(JSON.parse(xhr.responseText).message);
+							fail(JSON.parse(xhr.responseText).message);
 						}
 					}
 				}
@@ -22,7 +22,7 @@ function confirmDelete(selector, targetClass) {
 	});
 }
 
-function formAjax(selector) {
+function formAjax(selector, success, fail) {
 	selector.addEventListener("submit", function(e) {
 		var url = e.target.getAttribute("action");
 		var xhr = new XMLHttpRequest();
@@ -30,9 +30,9 @@ function formAjax(selector) {
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				JSON.parse(xhr.responseText);
 				if (JSON.parse(xhr.responseText).success) {
-					location.reload();
+					success(JSON.parse(xhr.responseText).message);
 				} else {
-					alert(JSON.parse(xhr.responseText).message);
+					fail(JSON.parse(xhr.responseText).message);
 				}
 			}
 		}
@@ -42,7 +42,7 @@ function formAjax(selector) {
 	});
 }
 
-function showEdit(selector, tagName) {
+function showEdit(selector, tagName, display) {
 	document.querySelector(selector).addEventListener("click", function(e){
 		var list = e.target;
 		if (e.target.tagName == "A" && e.target.innerText == "编辑") {
