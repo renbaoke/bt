@@ -7,8 +7,8 @@ primary key (id)
 create table article (
 id int not null auto_increment, 
 title varchar(255) not null, 
-createtime timestamp not null,
 modifytime timestamp not null default current_timestamp on update current_timestamp,
+createtime timestamp not null,
 body text,
 primary key (id)
 );
