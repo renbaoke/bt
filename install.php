@@ -26,7 +26,7 @@ if ($my_url === $from_url) {
 		
 		foreach ( $sqls as $sql )
 			if (! $DB->put ( $sql ))
-				die ( "创建数据表失败！" );
+				die ( "创建数据表失败！" . $sql );
 		
 		header ( "Location: admin/" );
 	}
