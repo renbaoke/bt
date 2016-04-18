@@ -9,7 +9,7 @@ class DB {
 			mysql_close ( $this->connection );
 	}
 	public function connect($server, $username, $password, $database) {
-		$this->connection = mysql_connect ( $server, $username, $password );
+		@$this->connection = mysql_connect ( $server, $username, $password );
 		if ($this->connection)
 			mysql_select_db ( $database, $this->connection );
 		return $this->connection;
@@ -35,5 +35,8 @@ class DB {
 	}
 	public function last_insert_id() {
 		return $this->get ( "select last_insert_id() as id" )[0]["id"];
+	}
+	public function errors() {
+		return $this->get ( "show errors" );
 	}
 }

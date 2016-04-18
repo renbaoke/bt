@@ -1,4 +1,22 @@
 <?php
+// 设置管理员密码
+function set_admin_password($file, $password) {
+	$password_file = fopen ( $file, "w" ) or fatal_error ( "密码文件丢失 " );
+	fwrite ( $password_file, "<?php return \"" . md5 ( $password ) . "\";" );
+	fclose ( $password_file );
+}
+// 配置数据库
+function set_db_config($file, $host, $database, $username, $password) {
+	$db_config_file = fopen ( $file, "w" ) or fatal_error ( "数据库配置文件丢失 " );
+	fwrite ( $db_config_file, "<?php\n" );
+	fwrite ( $db_config_file, "return array(\n" );
+	fwrite ( $db_config_file, "\t\"server\" => \"" . $host . "\",\n" );
+	fwrite ( $db_config_file, "\t\"username\" => \"" . $username . "\",\n" );
+	fwrite ( $db_config_file, "\t\"password\" => \"" . $password . "\",\n" );
+	fwrite ( $db_config_file, "\t\"database\" => \"" . $database . "\"\n" );
+	fwrite ( $db_config_file, ");\n" );
+	fclose ( $db_config_file );
+}
 // 删除文件路径中的不安全字符
 function path_escape($path) {
 	return str_replace ( "..", "", str_replace ( "../", "", $path ) );
@@ -15,7 +33,7 @@ function sql_escape($value, $wrap = "'") {
 	}
 	// 如果不是数字则加引号
 	if (! is_numeric ( $value )) {
-		$value = $wrap . mysql_real_escape_string ( $value ) . $wrap;
+		$value = $wrap . mysql_escape_string ( $value ) . $wrap;
 	}
 	return $value;
 }
