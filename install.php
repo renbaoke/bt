@@ -21,7 +21,7 @@ if ($my_url === $from_url) {
 		set_db_config ( "config/db.php", $db_host, $db_database, $db_username, $db_password );
 		
 		$sql_file = fopen ( "tables.sql", "r" );
-		$sqls = explode ( "\n\n", fread ( $sql_file, filesize ( "tables.sql" ) ) );
+		$sqls = explode ( ">>", fread ( $sql_file, filesize ( "tables.sql" ) ) );
 		fclose ( $sql_file );
 		
 		foreach ( $sqls as $sql )
